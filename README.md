@@ -1,4 +1,4 @@
-### React Route, Subroute navigation and include weather App for understanding components relationship 
+### React Route, Subroute navigation and include Weather, New York Times, Currency Ukrainian National Bank "Privatbank" App for understanding components relationship
 ![alt text](screen.jpeg?raw=true "Title")
 
 ## Available Scripts
