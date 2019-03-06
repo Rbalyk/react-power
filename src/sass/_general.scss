@@ -1,0 +1,145 @@
+
+
+$white:#ffffff;
+$brown:#2a2a2a;
+$react:#52d9ff;
+$blue:#0884bb;
+$black:#333333;
+
+@mixin container(){
+  @media all and (min-width: 1200px) {
+    width: 1130px;
+  }
+  @media all and (min-width: 991px) {
+    width: 998px;
+  }
+  @media all and (max-width: 1000px) {
+    width: 100%;
+  }
+}
+
+body {
+  background: $white;
+  min-height: 100vh;
+  width: 100%;
+  color: $black;
+  overflow-x: hidden;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: .008em;
+}
+h1,h2{
+  font-size: 38px;
+}
+h3,h4{
+  font-size: 30px;
+}
+h5,h6{
+  font-size: 20px;
+}
+a{
+  font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-weight: 300;
+  letter-spacing: .017em;
+}
+p{
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 300;
+  letter-spacing: .017em;
+  font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif !important;
+}
+
+.switch-wrapper {
+  position: relative;
+  > div {
+    position: absolute;
+    width: 100%;
+  }
+}
+ul{
+  padding-left: 0;
+  li{
+    list-style: none;
+  }
+}
+.main-logo{
+  position: fixed;
+  top: 23px;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 2;
+  @include container();
+  .logo {
+    width: 30px;
+    position: absolute;
+    left: 15px;
+  }
+}
+.main{
+  margin: 0 auto;
+  padding-top: 120px;
+  @include container();
+  >.switch-wrapper {
+    position: relative;
+    > div {
+      position: absolute;
+      width: calc(100% - 30px);
+      padding: 0 15px;
+    }
+  }
+  .navigation{
+    width: 100%;
+    background: rgba(45,45,45,0.98);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    ul{
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      li{
+        a{
+          padding: 15px 15px;
+          display: block;
+          font-size: 14px;
+          color: $white;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          &:hover{
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }
+}
+.submenuWrapper{
+  background: rgba(242,242,242,0.7);
+  position: fixed;
+  width: 100%;
+  left: 0;
+  z-index: 1;
+  top: 46px;
+  ul{
+    margin: 0 auto;
+    display: flex;
+    @include container();
+    li{
+      a{
+        padding: 15px;
+        font-size: 14px;
+        display: block;
+        color: #333333;
+        text-decoration: none;
+      }
+    }
+  }
+}
