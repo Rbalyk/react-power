@@ -14,7 +14,7 @@ const Menu = () => {
                 <div className={'navigation'}>
                     <ul>
                         <li>
-                            <Link to="/home">Home</Link>
+                            <Link to="/">Home</Link>
                         </li>
                         <li>
                             <Link to="/about">About</Link>
@@ -34,7 +34,7 @@ const Menu = () => {
                     atActive={{opacity: 1}}
                     className="switch-wrapper"
                 >
-                    <Route exact path='/home' component={Home}/>
+                    <Route exact path='/' component={Home}/>
                     <Route path='/about' component={About}/>
                     <Route path='/api' component={Api}/>
                     <Route path='/contact' component={Contact}/>
