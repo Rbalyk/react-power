@@ -1,16 +1,22 @@
 import React from 'react';
 
-const Form  = (props) => {
-    const{weatherMethod} = props;
-        return(
-            <form
-                className={'search'}
-                onSubmit={weatherMethod}>
-                <input type="text" name={'city'} placeholder={'NAME CITY'}/>
-                <button>GO</button>
-            </form>
-        )
 
-};
+class Form extends React.Component{
+    state = {inputValue: ''};
+    changeInputValue = (e) => this.setState({inputValue: e.target.value});
+    onSubmit = () => this.props.onSubmit(this.state.inputValue);
+    render(){
+        return(
+            <div className={'search'}>
+                <input type="text"
+                       placeholder={'NAME CITY'}
+                       value={this.state.inputValue}
+                       onChange={this.changeInputValue}/>
+                <button onClick={this.onSubmit}>GO</button>
+            </div>
+        )
+    }
+}
+
 
 export default Form;

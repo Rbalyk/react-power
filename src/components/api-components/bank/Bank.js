@@ -2,29 +2,27 @@ import React, {Component} from 'react';
 import BankCurrencyRender from './BankCurrencyRender'
 
 class Bank extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            currency: []
-        };
-    };
+    state = { currency: [] };
 
     componentDidMount() {
         this.BankCurrency();
     }
 
     BankCurrency = async () => {
-        const api_url = await fetch(`https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5`);
-        const data = await api_url.json();
-
-        this.setState({
-            currency: data
-        });
+        try{
+            const api_url = await fetch(`https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5`);
+            const data = await api_url.json();
+            this.setState({
+                currency: data
+            });
+        } catch (e) {
+            console.log(e)
+        }
     };
 
 
-    render() {
 
+    render() {
         return (
             <BankCurrencyRender data={this.state.currency}/>
         )

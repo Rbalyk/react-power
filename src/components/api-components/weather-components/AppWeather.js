@@ -21,18 +21,17 @@ class AppWeather extends React.Component {
 
     };
 
-    gettingWeather = async (event) => {
-        event.preventDefault();
-        const city = event.target.elements.city.value;
+    gettingWeather = async (city) => {
 
         if (!city) {
             return this.setState({
                 error: 'City name is not correct'
             })
         }
+
         try {
             const api_url = await
-                fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
+                fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
             const data = await api_url.json();
             if (data.cod === 200) {
                 const sunset = data.sys.sunset;
@@ -58,16 +57,35 @@ class AppWeather extends React.Component {
                     description: data.weather[0].description,
                     wind: data.wind.speed,
                     humidity: data.main.humidity,
-                    icon: 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png'
+                    icon: 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png',
+                    error:null
                 })
             } else {
                 this.setState({
+                    temp: null,
+                    city: null,
+                    country: null,
+                    sunrise: null,
+                    sunset: null,
+                    description: null,
+                    wind: null,
+                    humidity: null,
+                    icon: null,
                     error: 'City name is not correct'
                 })
             }
 
         } catch (e) {
             this.setState({
+                temp: null,
+                city: null,
+                country: null,
+                sunrise: null,
+                sunset: null,
+                description: null,
+                wind: null,
+                humidity: null,
+                icon: null,
                 error: 'City name is not correct'
             })
         }
@@ -79,7 +97,7 @@ class AppWeather extends React.Component {
         return (
             <div className={'weather'}>
                 <Info/>
-                <Form weatherMethod={this.gettingWeather}/>
+                <Form onSubmit={this.gettingWeather}/>
                 <Weather
                     temp={this.state.temp}
                     city={this.state.city}
