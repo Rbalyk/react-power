@@ -1,0 +1,131 @@
+@import "../../../styles/variables";
+
+.videoListContainer {
+  position: relative;
+  padding: 0 0 0 12px;
+  @media all and (max-width: $size-md) {
+    padding: 0;
+    width: 100%;
+  }
+
+  .videoListInfo {
+    position: absolute;
+    top: 0;
+    left: 12px;
+    right: 24px;
+    z-index: 1;
+    width: calc(100% - 36px);
+    background: #eeeeee;
+    padding: 12px 16px;
+    @media all and (max-width: $size-lg) {
+      right: 0;
+      width: calc(100% - 12px);
+    }
+    @media all and (max-width: $size-md) {
+      left: 0;
+      width: 100%;
+    }
+
+    h1 {
+      display: block;
+      max-height: 1.6rem;
+      margin: 0;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: Roboto, sans-serif;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+
+  .videoList {
+    width: 400px;
+    max-height: 502px;
+    position: relative;
+    z-index: 0;
+    overflow: auto;
+    background: #eeeeee;
+    padding-top: 35px;
+    @media all and (max-width: $size-ex-lg) {
+      max-height: 100%;
+    }
+    @media all and (max-width: $size-lg) {
+      width: 380px;
+    }
+    @media all and (max-width: $size-md) {
+      width: 100%;
+      max-height: 308px;
+    }
+
+    .videoListItem {
+      display: flex;
+      align-items: center;
+      padding: 4px 8px 4px 0;
+      min-height: 56px;
+      cursor: pointer;
+
+      .indexList {
+        width: 6%;
+        font-size: 12px;
+        color: hsl(0, 0%, 53.3%);
+        text-align: center;
+      }
+
+
+      .videoListItemBody {
+        align-items: center;
+        width: 94%;
+        display: inherit;
+        img {
+          width: 100px;
+          height: 56px;
+          object-fit: cover;
+          object-position: center;
+          display: inline-block;
+        }
+
+        .videoListItemInfo {
+          padding: 0 8px;
+          display: inline-block;
+          .videoTitle {
+            display: block;
+            margin: 0 0 4px 0;
+            max-height: 32px;
+            overflow: hidden;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 16px;
+            color: hsl(0, 0%, 7%);
+          }
+
+          span {
+            display: block;
+            text-overflow: ellipsis;
+            color: hsl(0, 0%, 7%);
+            white-space: nowrap;
+            max-height: 18px;
+            overflow: hidden;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 18px;
+            text-transform: none;
+          }
+        }
+      }
+    }
+    .videoListItem .play{
+      display: none;
+    }
+    .videoListItem.active{
+      .number{
+        display: none;
+      }
+      .play{
+        display: block;
+      }
+    }
+  }
+}
+
+

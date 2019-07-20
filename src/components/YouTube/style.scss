@@ -1,0 +1,12 @@
+@import "../../styles/variables";
+.youtube {
+  display: flex;
+  padding: 0 100px;
+  height: 37vw;
+  @media all and (max-width: $size-lg){
+    padding: 25px 15px;
+  }
+  @media all and (max-width: $size-md){
+    flex-wrap: wrap;
+  }
+}

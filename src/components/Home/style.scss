@@ -1,0 +1,15 @@
+@import '../../styles/variables.scss';
+
+
+.home{
+    padding:  0 100px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    iframe{
+        width: 80%;
+        margin:  0 auto;
+        height: 37vw;
+    }
+}
+
