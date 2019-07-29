@@ -6,9 +6,22 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    @media all and (max-width: $size-md) {
+        padding: 0 60px;
+    }
+    @media all and (max-width: $size-sm) {
+        padding: 0 30px;
+    }
     .content{
         width: 80%;
         margin-top: 30px;
+        padding-bottom: 90px;
+        @media all and (max-width: $size-md) {
+            width: 100%;
+        }
+        a{
+            color: $brown;
+        }
         .skills-list{
             padding: 0;
             display: flex;
@@ -17,7 +30,12 @@
             li{
                 width: calc(25% - 15px);
                 margin: 7.5px;
-
+                @media all and (max-width: $size-md) {
+                    width: calc(50% - 15px);
+                }
+                @media all and (max-width: $size-sm) {
+                    width: 100%;
+                }
                 span{
                     display: flex;
                     justify-content: center;
@@ -31,6 +49,29 @@
                     color: $white;
                     font-family: Roboto, Arial sans-serif;
                 }
+            }
+        }
+        .other{
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+            .lang-skills,.experience,.contacts{
+                width: 50%;
+                padding: 0 15px;
+                @media all and (max-width: $size-md) {
+                    width: 100%;
+                }
+            }
+        }
+        .item-other-info{
+            border-left: 3px solid $blue;
+            margin-bottom: 30px;
+            padding-left: 30px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+            .item-other-text{
+                font-size: 30px;
             }
         }
     }

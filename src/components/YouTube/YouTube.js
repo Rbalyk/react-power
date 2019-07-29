@@ -31,6 +31,7 @@ class YouTube extends Component {
         }
 
         return (
+
             <div className={'youtube'}>
                 <VideoDetail
                     currentVideoIndex = { currentVideoIndex }

@@ -5,6 +5,13 @@
   padding: 0 100px;
   width: 80%;
   margin: 0 auto;
+  @media all and (max-width: $size-md) {
+    padding: 0 60px;
+  }
+  @media all and (max-width: $size-sm) {
+    padding: 0 30px;
+    width: 100%;
+  }
   .info{
     color: $black;
   }

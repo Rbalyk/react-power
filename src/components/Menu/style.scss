@@ -4,6 +4,10 @@
   z-index: 2;
   display: flex;
   align-items: center;
+  @media all and (max-width: $size-md) {
+    width: 100%;
+    justify-content: center;
+  }
   .logo {
     width: 30px;
     margin-right: 15px;
@@ -24,10 +28,18 @@
   align-items: center;
   padding: 0 30px;
   z-index: 1;
+  @media all and (max-width: $size-md) {
+    padding: 10px 15px;
+    flex-wrap: wrap;
+  }
   ul{
     display: flex;
     justify-content: center;
     margin: 0;
+    @media all and (max-width: $size-md) {
+      width: 100%;
+      flex-wrap: wrap;
+    }
     li{
       a{
         padding: 15px 15px;
@@ -38,6 +50,9 @@
         transition: all 0.3s ease;
         &:hover{
           opacity: 0.7;
+        }
+        @media all and (max-width: $size-md) {
+          padding: 7px 7px;
         }
       }
     }
